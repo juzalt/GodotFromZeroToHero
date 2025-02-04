@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://frxwgqrbtqx6"]
+
+[ext_resource type="FontFile" uid="uid://8jkvpsnyv73u" path="res://fonts/Montserrat-Regular.ttf" id="1_gc33x"]
+[ext_resource type="Script" path="res://scenes/debug.gd" id="1_vs61s"]
+
+[node name="Debug" type="Label"]
+theme_override_fonts/font = ExtResource("1_gc33x")
+theme_override_font_sizes/font_size = 24
+script = ExtResource("1_vs61s")

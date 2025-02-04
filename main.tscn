@@ -1,0 +1,63 @@
+[gd_scene load_steps=4 format=3 uid="uid://du8w4v8sfw4c4"]
+
+[ext_resource type="PackedScene" uid="uid://frxwgqrbtqx6" path="res://scenes/debug.tscn" id="1_bvnl8"]
+[ext_resource type="PackedScene" uid="uid://5seirs4oh3i6" path="res://scenes/HUD.tscn" id="2_e2nuq"]
+[ext_resource type="FontFile" uid="uid://ddokmhqnflvc1" path="res://fonts/BrunoAceSC-Regular.ttf" id="2_n8kig"]
+
+[node name="MainRoot" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 25, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 130, 0)
+fov = 30.0
+
+[node name="Debug" parent="." instance=ExtResource("1_bvnl8")]
+anchors_preset = -1
+anchor_left = 0.001
+anchor_top = 0.783
+anchor_right = 0.001
+anchor_bottom = 0.783
+offset_left = -2.6
+offset_top = -1.70007
+offset_right = 292.4
+offset_bottom = 105.3
+
+[node name="Hud" parent="." instance=ExtResource("2_e2nuq")]
+
+[node name="Player" type="MarginContainer" parent="Hud"]
+offset_right = 380.0
+offset_bottom = 76.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="GridContainer" type="GridContainer" parent="Hud/Player"]
+layout_mode = 2
+columns = 2
+
+[node name="HullIntegrityLabel" type="Label" parent="Hud/Player/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_n8kig")
+theme_override_font_sizes/font_size = 20
+text = "Hull Integrity"
+
+[node name="HullIntegrityBar" type="ProgressBar" parent="Hud/Player/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_n8kig")
+value = 100.0
+
+[node name="ShieldPowerLabel" type="Label" parent="Hud/Player/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_n8kig")
+theme_override_font_sizes/font_size = 20
+text = "Hull Integrity"
+
+[node name="ShieldPowerBar" type="ProgressBar" parent="Hud/Player/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_n8kig")
+value = 100.0

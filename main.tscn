@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://du8w4v8sfw4c4"]
+[gd_scene load_steps=6 format=3 uid="uid://du8w4v8sfw4c4"]
 
 [ext_resource type="PackedScene" uid="uid://frxwgqrbtqx6" path="res://scenes/debug.tscn" id="1_bvnl8"]
+[ext_resource type="Script" path="res://main.gd" id="1_kd4mg"]
 [ext_resource type="PackedScene" uid="uid://5seirs4oh3i6" path="res://scenes/HUD.tscn" id="2_e2nuq"]
 [ext_resource type="FontFile" uid="uid://ddokmhqnflvc1" path="res://fonts/BrunoAceSC-Regular.ttf" id="2_n8kig"]
+[ext_resource type="PackedScene" uid="uid://c3nn4f1scg2pa" path="res://scenes/player.tscn" id="5_g708e"]
 
 [node name="MainRoot" type="Node3D"]
+script = ExtResource("1_kd4mg")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 25, 0)
@@ -61,3 +64,5 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("2_n8kig")
 value = 100.0
+
+[node name="player" parent="." instance=ExtResource("5_g708e")]
